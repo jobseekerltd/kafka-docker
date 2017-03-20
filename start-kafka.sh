@@ -41,6 +41,9 @@ do
   fi
 done
 
+# Increase the max message size
+echo "message.max.bytes=10485760" >> $KAFKA_HOME/config/server.properties
+
 if [[ -n "$CUSTOM_INIT_SCRIPT" ]] ; then
   eval $CUSTOM_INIT_SCRIPT
 fi
